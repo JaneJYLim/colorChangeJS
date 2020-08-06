@@ -7,7 +7,7 @@ function widthResize() {
     
     const hasClass = width.classList.contains(RESIZE_CLASS);
     if (hasClass) {
-      width.classList.(RESIZE_CLASS);
+      width.classList.remove(RESIZE_CLASS);
     } else {
       width.classList.add(RESIZE_CLASS);
     }
