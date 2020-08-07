@@ -1,20 +1,25 @@
 
-let width = document.querySelector("body");
+var colorChange;
 
-const RESIZE_CLASS = "resize";
+window.addEventListener("resize", doneResizing) 
+colorChange = window.setTimeout(doneResizing, 10);
 
-function widthResize() {
+function doneResizing() {
+
+    clearTimeout(colorChange);
+    console.log(window.innerWidth);
     
-    const hasClass = width.classList.contains(RESIZE_CLASS);
-    if (hasClass) {
-      width.classList.remove(RESIZE_CLASS);
+    if (window.innerWidth >= 800 && window.innerWidth <= 1200) {
+        document.querySelector("h1").innerHTML = ":) <br><br> hotpink";
+        document.body.style.backgroundColor = "hotpink";
+    } else if (window.innerWidth > 1200 && window.innerWidth <=1600) {
+        document.body.style.backgroundColor = "orange";
+        document.querySelector("h1").innerHTML = ":D <br><br> Orange";
+    } else if (window.innerWidth > 1600) {
+        document.body.style.backgroundColor = "lightgreen";
+        document.querySelector("h1").innerHTML = ":P <br><br> lightgreen";
     } else {
-      width.classList.add(RESIZE_CLASS);
+        document.body.style.backgroundColor = "dodgerblue";
+        document.querySelector("h1").innerHTML = ":( <br><br> Blue";
     }
-
 }
-
-function init() {
-  window.addEventListener("resize", widthResize);
-}
-init();

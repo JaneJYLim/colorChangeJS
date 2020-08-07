@@ -1,8 +1,7 @@
 body {
     font-family: sans-serif;
-    color: dodgerblue;
-  }
-  h1 {
-    color: #ffffff;
-  }
-  
+}
+h1{
+    color: #fff;
+    margin: 30px;
+}
